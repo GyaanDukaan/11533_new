@@ -68,35 +68,6 @@ public:
 };
 
 // Function to detect plagiarism between two papers
-/*
-void detectPlagiarism(const string& paper1, const string& paper2, int substringLength) {
-    RabinKarp rk(PRIME1);
-
-    vector<int> paper1Hashes = rk.precomputeHashes(paper1, substringLength);
-    vector<int> paper2Hashes = rk.precomputeHashes(paper2, substringLength);
-
-    unordered_map<int, vector<int>> hashMap;
-
-    // Store hashes of paper1
-    for (int i = 0; i < paper1.size() - substringLength + 1; ++i) {
-        hashMap[paper1Hashes[i + substringLength]].push_back(i);
-    }
-
-    // Compare with paper2
-    for (int i = 0; i < paper2.size() - substringLength + 1; ++i) {
-        int hashValue = paper2Hashes[i + substringLength];
-        if (hashMap.find(hashValue) != hashMap.end()) {
-            for (int startIdx : hashMap[hashValue]) {
-                if (rk.detectCollision(paper2, i, i + substringLength, hashValue, substringLength)) {
-                    cout << "Plagiarized content detected between Paper 1 and Paper 2 at position " << i << endl;
-                }
-            }
-        }
-    }
-}*/
-
-
-// Function to detect plagiarism between two papers
 void detectPlagiarism(const string& paper1, const string& paper2, int substringLength) {
     RabinKarp rk(PRIME1);
 
